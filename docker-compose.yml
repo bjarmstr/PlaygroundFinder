@@ -1,0 +1,32 @@
+version: '3.4'
+
+services:
+  playgroundfinder.api:
+    image: ${DOCKER_REGISTRY-}playgroundfinderapi
+    container_name: "playgroundfinder.api"
+    build:
+      context: .
+      dockerfile: PlaygroundFinder.API/Dockerfile
+    ports:
+      - "34100:80"
+      - "34101:443"
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=playground.db;Database=pfdb;User Id=pfuser;Password=pfpassword
+    depends_on:
+      - playground.db
+
+  playground.db:
+    restart: on-failure
+    image: "postgis/postgis:13-3.1-alpine"
+    container_name: "mktfy.db"
+    environment:
+      - POSTGRES_USER=pfuser
+      - POSTGRES_DB=pfdb
+      - POSTGRES_PASSWORD=pfpassword
+    volumes:
+      - playground-db:/var/lib/postgresql/data
+    ports:
+      - "34132:5432"
+   
+volumes:
+  playground-db:

@@ -11,6 +11,8 @@ using Microsoft.OpenApi.Models;
 using PlaygroundFinder.Repositories;
 using PlaygroundFinder.Repositories.Repositories;
 using PlaygroundFinder.Repositories.Repositories.Interfaces;
+using PlaygroundFinder.Services;
+using PlaygroundFinder.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,6 +45,7 @@ namespace PlaygroundFinder.API
                 );
 
             services.AddScoped<IPlaygroundRepository, PlaygroundRepository>();
+            services.AddScoped<IPlaygroundService, PlaygroundService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

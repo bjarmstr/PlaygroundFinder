@@ -9,7 +9,9 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaygroundFinder.Repositories", "PlaygroundFinder.Repositories\PlaygroundFinder.Repositories.csproj", "{074D4522-B7AA-44F0-AF2C-87B866678947}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaygroundFinder.Models", "PlaygroundFinder.Models\PlaygroundFinder.Models.csproj", "{0631B4C3-DF43-4689-B42A-1EA3B88D656B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaygroundFinder.Models", "PlaygroundFinder.Models\PlaygroundFinder.Models.csproj", "{0631B4C3-DF43-4689-B42A-1EA3B88D656B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaygroundFinder.Services", "PlaygroundFinder.Services\PlaygroundFinder.Services.csproj", "{0B16CBF6-EC1D-4E50-911C-0498B0A4B9D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{0631B4C3-DF43-4689-B42A-1EA3B88D656B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0631B4C3-DF43-4689-B42A-1EA3B88D656B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0631B4C3-DF43-4689-B42A-1EA3B88D656B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B16CBF6-EC1D-4E50-911C-0498B0A4B9D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B16CBF6-EC1D-4E50-911C-0498B0A4B9D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B16CBF6-EC1D-4E50-911C-0498B0A4B9D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B16CBF6-EC1D-4E50-911C-0498B0A4B9D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

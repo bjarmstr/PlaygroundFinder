@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PlaygroundFinder.Models.ViewModels.Playground;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -14,10 +15,17 @@ namespace PlaygroundFinder.Models.Entities
         {
         }
 
-        //public Playground(PlaygroundCreateVM src)
-        //{
-        //    Name = src.Name;
+        public Playground(PlaygroundCreateVM src)
+        {
+            Name = src.Name;
 
+        }
+
+
+        //public Playground(PlaygroundUpdateVM src)
+        //{
+        // Id = src.Id;
+        //   Name = src.Name;
 
         //}
 

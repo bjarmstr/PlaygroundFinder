@@ -23,7 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PlaygroundFinder.Models\PlaygroundFinder.Models.csproj" />
-    <ProjectReference Include="..\PlaygroundFinder.Repositories\PlaygroundFinder.Repositories.csproj" />
+    <ProjectReference Include="..\PlaygroundFinder.Services\PlaygroundFinder.Services.csproj" />
   </ItemGroup>
 
 </Project>

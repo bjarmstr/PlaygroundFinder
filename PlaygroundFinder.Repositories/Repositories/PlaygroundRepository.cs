@@ -1,4 +1,5 @@
-﻿using PlaygroundFinder.Models.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using PlaygroundFinder.Models.Entities;
 using PlaygroundFinder.Repositories.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -21,13 +22,21 @@ namespace PlaygroundFinder.Repositories.Repositories
        
         public async Task<Playground> Create(Playground src)
         {
-            // Add and save the changes to the database
           
             _context.Playgrounds.Add(src);         // Perform the add in memory
             await _context.SaveChangesAsync();  // Save the changes to the real database
 
             // Return the new listing. Entity Framework will have automatically added the new Id value to the entity class.
             return src;
+        }
+
+        public async Task<Playground>Get(Guid id)
+        {
+                var result = await _context.Playgrounds
+                .FirstOrDefaultAsync(i => i.Id == id);
+
+            if (result == null) throw new Exception("The requested listing could not be found");
+            return result;
         }
 
     }

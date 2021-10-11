@@ -30,5 +30,12 @@ namespace PlaygroundFinder.API.Controllers
             // Return a 200 response with the ListingVM
             return Ok(result);
         }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<PlaygroundVM>>Get ([FromRoute]Guid id)
+        {
+            
+            return Ok(await _playgroundService.Get(id));
+        }
     }
 }

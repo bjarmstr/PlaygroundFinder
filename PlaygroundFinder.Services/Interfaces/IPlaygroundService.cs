@@ -10,6 +10,7 @@ namespace PlaygroundFinder.Services.Interfaces
     public interface IPlaygroundService
     {
         Task<PlaygroundVM> Create(PlaygroundCreateVM src);
+        Task<PlaygroundVM> Get(Guid id);
 
 
     }

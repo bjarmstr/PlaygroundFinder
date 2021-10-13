@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NetTopologySuite.Geometries;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,8 +17,9 @@ namespace PlaygroundFinder.Models.ViewModels.Playground
         }
 
         public Guid Id { get; set; }
-
     
         public string Name { get; set; }
+
+        public Point GeoLocation { get; set; }
     }
 }

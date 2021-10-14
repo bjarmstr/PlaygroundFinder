@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL.NetTopologySuite" Version="5.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\PlaygroundFinder.Models\PlaygroundFinder.Models.csproj" />
     <ProjectReference Include="..\PlaygroundFinder.Repositories\PlaygroundFinder.Repositories.csproj" />
   </ItemGroup>

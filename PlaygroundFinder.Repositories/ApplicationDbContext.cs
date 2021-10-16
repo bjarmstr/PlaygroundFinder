@@ -21,11 +21,11 @@ namespace PlaygroundFinder.Repositories
 
         }
 
-        //protected override void OnModelCreating(ModelBuilder builder)
-        //{
-        //    //Write Fluent API configurations here
-        //    builder.HasPostgresExtension("postgis");
-        //}
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+           
+            builder.HasPostgresExtension("postgis");
+        }
 
         public DbSet<Playground> Playgrounds { get; set; }
     }

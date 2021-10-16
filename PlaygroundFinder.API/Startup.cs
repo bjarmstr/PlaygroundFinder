@@ -40,7 +40,7 @@ namespace PlaygroundFinder.API
                     builder => {
                         //project where we want Code-First Migrations to reside
                         builder.MigrationsAssembly("PlaygroundFinder.Repositories");
-
+                        builder.UseNetTopologySuite();
                     })
                 );
 

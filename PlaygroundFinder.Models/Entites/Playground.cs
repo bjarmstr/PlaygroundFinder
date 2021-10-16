@@ -21,6 +21,10 @@ namespace PlaygroundFinder.Models.Entities
         {
             Name = src.Name;
             GeoLocation = src.GeoLocation;
+            Accessible = src.Accessible;
+            Quadrant = src.Quadrant;
+            AgeRange = src.AgeRange;
+            Size = src.Size;
 
         }
 
@@ -40,5 +44,13 @@ namespace PlaygroundFinder.Models.Entities
         public Point GeoLocation { get; set; }
 
         public string Name { get; set; }
+
+        public bool Accessible { get; set; }
+
+        public string Quadrant { get; set; }
+
+        public string AgeRange { get; set; }
+        
+        public string Size { get; set; }
     }
 }

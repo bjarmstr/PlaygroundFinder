@@ -17,6 +17,13 @@ namespace PlaygroundFinder.Models.ViewModels.Playground
         [Required]
         public Point GeoLocation { get; set; }
 
+        public bool Accessible { get; set; }
+
+        public string Quadrant { get; set; }
+
+        public string AgeRange { get; set; }
+
+        public string Size { get; set; }
 
     }
 }

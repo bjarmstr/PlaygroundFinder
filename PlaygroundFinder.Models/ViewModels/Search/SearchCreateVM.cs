@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PlaygroundFinder.Models.ViewModels.Search
 {
-    class SearchCreateVM
+    public class SearchCreateVM
     {
     }
 }

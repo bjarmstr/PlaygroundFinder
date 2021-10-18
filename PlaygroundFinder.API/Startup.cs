@@ -46,6 +46,7 @@ namespace PlaygroundFinder.API
 
             services.AddScoped<IPlaygroundRepository, PlaygroundRepository>();
             services.AddScoped<IPlaygroundService, PlaygroundService>();
+            services.AddScoped<IFeatureDetailService, FeatureDetailService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

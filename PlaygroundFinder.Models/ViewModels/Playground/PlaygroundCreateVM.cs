@@ -14,8 +14,11 @@ namespace PlaygroundFinder.Models.ViewModels.Playground
     
         public string Name { get; set; }
 
-        [Required]
-        public Point GeoLocation { get; set; }
+       // [Required]
+       // public Point GeoLocation { get; set; }
+      
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
 
         public bool Accessible { get; set; }
 

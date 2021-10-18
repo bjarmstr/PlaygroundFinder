@@ -20,11 +20,12 @@ namespace PlaygroundFinder.Models.Entities
         public Playground(PlaygroundCreateVM src)
         {
             Name = src.Name;
-            GeoLocation = src.GeoLocation;
+           // GeoLocation = src.GeoLocation;
             Accessible = src.Accessible;
             Quadrant = src.Quadrant;
             AgeRange = src.AgeRange;
             Size = src.Size;
+            GeoLocation = new Point(src.Longitude, src.Latitude);
 
         }
 
@@ -42,6 +43,7 @@ namespace PlaygroundFinder.Models.Entities
         [Required]
         [Column(TypeName = "geography (point)")]
         public Point GeoLocation { get; set; }
+        //public Point(double x, double y)
 
         public string Name { get; set; }
 
@@ -52,5 +54,7 @@ namespace PlaygroundFinder.Models.Entities
         public string AgeRange { get; set; }
         
         public string Size { get; set; }
+
+        public ICollection<PlaygroundGroundCover> GroundCovers { get; set; }
     }
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PlaygroundFinder.API</name>
+    </assembly>
+    <members>
+        <member name="M:PlaygroundFinder.API.Controllers.FeatureDetailController.GetAll(System.String)">
+            <summary>
+            List of Options available for a given feature
+            </summary>
+            <param name="feature"></param>
+            <remarks>feature GroundCover, AgeRange</remarks>
+        </member>
+    </members>
+</doc>

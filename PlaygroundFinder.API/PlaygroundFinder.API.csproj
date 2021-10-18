@@ -1,10 +1,18 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>ffa63abc-d85c-4b14-abaf-fa4731d1a6fa</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\bjarm\git\PlaygroundFinder\PlaygroundFinder.API\PlaygroundFinder.API.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\bjarm\git\PlaygroundFinder\PlaygroundFinder.API\PlaygroundFinder.API.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

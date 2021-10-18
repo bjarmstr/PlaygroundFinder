@@ -15,6 +15,7 @@ using PlaygroundFinder.Services;
 using PlaygroundFinder.Services.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -48,10 +49,24 @@ namespace PlaygroundFinder.API
             services.AddScoped<IPlaygroundService, PlaygroundService>();
             services.AddScoped<IFeatureDetailService, FeatureDetailService>();
             services.AddControllers();
+
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "PlaygroundFinder.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "MKTFY API", Version = "v1" });
+                var apiPath = Path.Combine(System.AppContext.BaseDirectory, "PlaygroundFinder.Api.xml");
+                var modelsPath = Path.Combine(System.AppContext.BaseDirectory, "PlaygroundFinder.Models.xml");
+                c.IncludeXmlComments(apiPath);
+                c.IncludeXmlComments(modelsPath);
+                //c.AddSecurityDefinition("bearer", new OpenApiSecurityScheme
+                //{
+                //    Type = SecuritySchemeType.Http,
+                //    BearerFormat = "JWT",
+                //    In = ParameterLocation.Header,
+                //    Scheme = "bearer"
+                //});
+               // c.OperationFilter<AuthHeaderOperationFilter>();
             });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

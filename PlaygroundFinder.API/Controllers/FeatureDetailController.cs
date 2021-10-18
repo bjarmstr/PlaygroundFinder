@@ -20,6 +20,11 @@ namespace PlaygroundFinder.API.Controllers
             _featureDetailService = featureDetailService;
         }
 
+        /// <summary>
+        /// List of Options available for a given feature
+        /// </summary>
+        /// <param name="feature"></param>
+        /// <remarks>feature GroundCover, AgeRange</remarks>
         [HttpGet("{feature}")]
         public async Task<ActionResult<List<string>>> GetAll(string feature)
         {

@@ -31,6 +31,7 @@ namespace PlaygroundFinder.API.Controllers
             return Ok(result);
         }
 
+
         [HttpGet("{id}")]
         public async Task<ActionResult<PlaygroundVM>>Get ([FromRoute]Guid id)
         {

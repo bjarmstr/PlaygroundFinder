@@ -10,7 +10,7 @@ namespace PlaygroundFinder.Models.Entities
     public class GroundCover
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         public string Material{ get; set; }
 

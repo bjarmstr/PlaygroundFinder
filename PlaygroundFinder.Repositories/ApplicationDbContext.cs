@@ -24,10 +24,21 @@ namespace PlaygroundFinder.Repositories
         {
                      
             builder.HasPostgresExtension("postgis");
+            
             builder.Entity<PlaygroundGroundCover>()
                 .HasKey(e => new { e.PlaygroundId, e.GroundCoverId });
+           
+            builder.Entity<GroundCover>().HasData(
+             new GroundCover { Id = 1, Material = "Natural Round Rock" },
+             new GroundCover { Id = 2, Material = "Sand" },
+             new GroundCover { Id = 3, Material = "Wood Chips" },
+             new GroundCover { Id = 4, Material = "Poured In Place Rubber" },
+             new GroundCover { Id = 5, Material = "Crumb Rubber"},
+             new GroundCover { Id = 6, Material = "Other"}
+             );
 
-     
+
+
         }
 
         public DbSet<Playground> Playgrounds { get; set; }

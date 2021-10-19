@@ -40,8 +40,8 @@ namespace PlaygroundFinder.Repositories
              );
 
             builder.Entity<AgeRange>().HasData(
-                new AgeRange { Id = 1, type = "Junior"},
-                new AgeRange { Id = 2, type= "Senior" }
+                new AgeRange { Id = 1, Type = "Junior"},
+                new AgeRange { Id = 2, Type= "Senior" }
                 );
 
 

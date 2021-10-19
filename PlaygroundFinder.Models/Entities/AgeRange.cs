@@ -12,7 +12,7 @@ namespace PlaygroundFinder.Models.Entities
         [Key]
         public int Id { get; set; }
 
-        public string type { get; set; }
+        public string Type { get; set; }
 
         public ICollection<PlaygroundAgeRange> Playgrounds { get; set; }
     }

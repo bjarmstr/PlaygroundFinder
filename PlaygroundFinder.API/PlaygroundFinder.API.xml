@@ -4,7 +4,7 @@
         <name>PlaygroundFinder.API</name>
     </assembly>
     <members>
-        <member name="M:PlaygroundFinder.API.Controllers.FeatureDetailController.GetAll(System.String)">
+        <member name="M:PlaygroundFinder.API.Controllers.FeatureDetailController.GetAllGroundCovers">
             <summary>
             List of Options available for a given feature
             </summary>

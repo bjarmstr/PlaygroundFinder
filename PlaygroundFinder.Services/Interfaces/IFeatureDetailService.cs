@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PlaygroundFinder.Models.ViewModels.FeatureDetail;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,8 @@ namespace PlaygroundFinder.Services.Interfaces
 {
     public interface IFeatureDetailService
     {
-        Task<List<string>> GetAll(string feature);
-
+        Task<List<FeatureDetailVM>> GetAllGroundCover();
+        Task<List<FeatureDetailVM>> GetAllAgeRange();
 
     }
 }

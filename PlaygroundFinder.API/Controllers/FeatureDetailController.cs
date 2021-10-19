@@ -22,14 +22,13 @@ namespace PlaygroundFinder.API.Controllers
         }
 
         /// <summary>
-        /// List of Options available for a given feature
+        /// List of Ground Cover Options available
         /// </summary>
-        /// <param name="feature"></param>
-        /// <remarks>feature GroundCover, AgeRange</remarks>
-        [HttpGet("{feature}")]
-        public async Task<ActionResult<List<string>>> GetAll(string feature)
+        [HttpGet]
+        [Route ("api/feature/groundCover")]
+        public async Task<ActionResult<List<string>>> GetAllGroundCovers()
         {
-            return Ok(await _featureDetailService.GetAll(feature));
+            return Ok(await _featureDetailService.GetAllGroundCover());
         }
     }
 }

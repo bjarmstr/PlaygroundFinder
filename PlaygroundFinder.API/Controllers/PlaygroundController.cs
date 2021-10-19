@@ -20,7 +20,10 @@ namespace PlaygroundFinder.API.Controllers
             _playgroundService = playgroundService;
         }
 
-        // Create a new listing
+        /// <summary>
+        /// Create new Playground
+        /// </summary>
+        /// <param name="data"></param>
         [HttpPost]
         public async Task<ActionResult<PlaygroundVM>> Create([FromBody] PlaygroundCreateVM data)
         {
@@ -31,7 +34,10 @@ namespace PlaygroundFinder.API.Controllers
             return Ok(result);
         }
 
-
+        /// <summary>
+        /// Get a Playground 
+        /// </summary>
+        /// <param name="id"></param>
         [HttpGet("{id}")]
         public async Task<ActionResult<PlaygroundVM>>Get ([FromRoute]Guid id)
         {

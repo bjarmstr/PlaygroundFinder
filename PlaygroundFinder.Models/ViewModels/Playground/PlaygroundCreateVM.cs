@@ -1,4 +1,5 @@
 ﻿using NetTopologySuite.Geometries;
+using PlaygroundFinder.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -24,7 +25,9 @@ namespace PlaygroundFinder.Models.ViewModels.Playground
 
         public string Quadrant { get; set; }
 
-        public string AgeRange { get; set; }
+        public ICollection<PlaygroundAgeRange> AgeRanges { get; set; }
+
+        public ICollection<PlaygroundGroundCover> GroundCovers { get; set; }
 
         public string Size { get; set; }
 

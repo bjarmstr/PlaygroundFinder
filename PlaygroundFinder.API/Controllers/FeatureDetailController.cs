@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PlaygroundFinder.Models.ViewModels.FeatureDetail;
 using PlaygroundFinder.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,6 @@ namespace PlaygroundFinder.API.Controllers
         [HttpGet("{feature}")]
         public async Task<ActionResult<List<string>>> GetAll(string feature)
         {
-
             return Ok(await _featureDetailService.GetAll(feature));
         }
     }

@@ -23,7 +23,8 @@ namespace PlaygroundFinder.Models.Entities
            // GeoLocation = src.GeoLocation;
             Accessible = src.Accessible;
             Quadrant = src.Quadrant;
-            AgeRange = src.AgeRange;
+            AgeRanges = src.AgeRanges;
+            GroundCovers = src.GroundCovers;
             Size = src.Size;
             GeoLocation = new Point(src.Longitude, src.Latitude);
 
@@ -50,11 +51,10 @@ namespace PlaygroundFinder.Models.Entities
         public bool Accessible { get; set; }
 
         public string Quadrant { get; set; }
-
-        public string AgeRange { get; set; }
         
         public string Size { get; set; }
 
         public ICollection<PlaygroundGroundCover> GroundCovers { get; set; }
+        public ICollection<PlaygroundAgeRange> AgeRanges{ get; set; }
     }
 }

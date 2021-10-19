@@ -11,5 +11,17 @@
             <param name="feature"></param>
             <remarks>feature GroundCover, AgeRange</remarks>
         </member>
+        <member name="M:PlaygroundFinder.API.Controllers.PlaygroundController.Create(PlaygroundFinder.Models.ViewModels.Playground.PlaygroundCreateVM)">
+            <summary>
+            Create new Playground
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:PlaygroundFinder.API.Controllers.PlaygroundController.Get(System.Guid)">
+            <summary>
+            Get a Playground 
+            </summary>
+            <param name="id"></param>
+        </member>
     </members>
 </doc>

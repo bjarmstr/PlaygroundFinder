@@ -4,12 +4,15 @@
         <name>PlaygroundFinder.API</name>
     </assembly>
     <members>
-        <member name="M:PlaygroundFinder.API.Controllers.FeatureDetailController.GetAllGroundCovers">
+        <member name="M:PlaygroundFinder.API.Controllers.FeatureDetailController.GetAllGroundCover">
             <summary>
-            List of Options available for a given feature
+            List of Ground Cover Options available
             </summary>
-            <param name="feature"></param>
-            <remarks>feature GroundCover, AgeRange</remarks>
+        </member>
+        <member name="M:PlaygroundFinder.API.Controllers.FeatureDetailController.GetAllAgeRange">
+            <summary>
+            List of AgeRange Options available
+            </summary>
         </member>
         <member name="M:PlaygroundFinder.API.Controllers.PlaygroundController.Create(PlaygroundFinder.Models.ViewModels.Playground.PlaygroundCreateVM)">
             <summary>

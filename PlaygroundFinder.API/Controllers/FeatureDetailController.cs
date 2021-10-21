@@ -25,10 +25,20 @@ namespace PlaygroundFinder.API.Controllers
         /// List of Ground Cover Options available
         /// </summary>
         [HttpGet]
-        [Route ("api/feature/groundCover")]
-        public async Task<ActionResult<List<string>>> GetAllGroundCovers()
+        [Route ("groundCover")]
+        public async Task<ActionResult<List<FeatureDetailVM>>> GetAllGroundCover()
         {
             return Ok(await _featureDetailService.GetAllGroundCover());
+        }
+
+        /// <summary>
+        /// List of AgeRange Options available
+        /// </summary>
+        [HttpGet]
+        [Route("ageRange")]
+        public async Task<ActionResult<List<FeatureDetailVM>>> GetAllAgeRange()
+        {
+            return Ok(await _featureDetailService.GetAllAgeRange());
         }
     }
 }

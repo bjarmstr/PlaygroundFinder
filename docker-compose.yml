@@ -12,6 +12,10 @@ services:
       - "34101:443"
     environment:
       - ConnectionStrings__DefaultConnection=Server=playground.db;Database=pfdb;User Id=pfuser;Password=pfpassword
+      - AWS__ImageBucket=s3-mktfy
+      - AWS__Region=ca-central-1
+    volumes:
+      - .aws:/root/.aws
     depends_on:
       - playground.db
 

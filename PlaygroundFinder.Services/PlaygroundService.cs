@@ -38,11 +38,8 @@ namespace PlaygroundFinder.Services
 
         public async Task<PlaygroundVM>Get(Guid id)
         {
-            
-            // Have the repository create the new listing
             var result = await _playgroundRepository.Get(id);
             var model = new PlaygroundVM(result);
-
             return model;
         }
     }

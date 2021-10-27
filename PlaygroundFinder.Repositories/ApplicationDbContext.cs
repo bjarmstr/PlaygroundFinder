@@ -55,5 +55,7 @@ namespace PlaygroundFinder.Repositories
 
         public DbSet<PlaygroundGroundCover> PlaygroundGroundCovers { get; set; }
         public DbSet<PlaygroundAgeRange> PlaygroundAgeRanges { get; set; }
+
+        public DbSet<Upload> Uploads { get; set; }
     }
 }

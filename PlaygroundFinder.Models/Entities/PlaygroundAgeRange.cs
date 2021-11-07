@@ -10,5 +10,8 @@ namespace PlaygroundFinder.Models.Entities
     {
         public Guid PlaygroundId { get; set; }
         public int AgeRangeId { get; set; }
+        
+        public AgeRange AgeRange { get; set; }
+        public Playground Playground { get; set; }
     }
 }

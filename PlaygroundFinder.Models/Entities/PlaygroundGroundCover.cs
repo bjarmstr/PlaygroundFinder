@@ -10,5 +10,9 @@ namespace PlaygroundFinder.Models.Entities
     {
         public Guid PlaygroundId { get; set; }
         public int GroundCoverId { get; set; }
+
+        public Playground Playground{ get; set; }
+
+        public GroundCover GroundCover{ get; set; }
     }
 }

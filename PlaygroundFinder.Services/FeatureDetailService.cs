@@ -1,4 +1,5 @@
 ﻿using PlaygroundFinder.Models.ViewModels.FeatureDetail;
+using PlaygroundFinder.Repositories.Repositories.Interfaces;
 using PlaygroundFinder.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -10,30 +11,30 @@ namespace PlaygroundFinder.Services
 {
     public class FeatureDetailService: IFeatureDetailService
     {
+        private IFeatureDetailRepository _featureDetailRepository;
+
+        public FeatureDetailService(IFeatureDetailRepository featureDetailRepository)
+        {
+            _featureDetailRepository = featureDetailRepository;
+        }
         public async Task<List<FeatureDetailVM>> GetAllGroundCover()
         {
 
-            // var result = await _featureDetailRepository.GetAll(feature);
-            FeatureDetailVM groundCover1 = new();
-            groundCover1.Id = 1;
-            groundCover1.Type = "test data No Repo";
-            List<FeatureDetailVM> results = new();
-            results.Add(groundCover1);
+            var results = await _featureDetailRepository.GetAllGroundCover();
+            
+           var models = results.Select(gc => new FeatureDetailVM { Type = gc.Material, Id = gc.Id }).ToList();
 
-            return results;
+            return models;
         }
 
         public async Task<List<FeatureDetailVM>> GetAllAgeRange()
         {
 
-            // var result = await _featureDetailRepository.GetAll(feature);
-            FeatureDetailVM groundCover1 = new();
-            groundCover1.Id = 1;
-            groundCover1.Type = "test data No Repo";
-            List<FeatureDetailVM> results = new();
-            results.Add(groundCover1);
+            var results = await _featureDetailRepository.GetAllAgeRange();
 
-            return results;
+            var models = results.Select(gc => new FeatureDetailVM { Type = gc.Type, Id = gc.Id }).ToList();
+
+            return models;
         }
 
 

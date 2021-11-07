@@ -14,6 +14,6 @@ namespace PlaygroundFinder.Models.Entities
 
         public string Type { get; set; }
 
-        public ICollection<PlaygroundAgeRange> Playgrounds { get; set; }
+        public ICollection<PlaygroundAgeRange> PlaygroundAgeRanges { get; set; }
     }
 }

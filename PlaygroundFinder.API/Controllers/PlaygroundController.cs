@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PlaygroundFinder.Models.ViewModels.Playground;
+using PlaygroundFinder.Models.ViewModels.Search;
 using PlaygroundFinder.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -44,5 +45,36 @@ namespace PlaygroundFinder.API.Controllers
             
             return Ok(await _playgroundService.Get(id));
         }
+
+
+        [HttpGet("search")]
+        public async Task<ActionResult<List<PlaygroundVM>>> GetBySearchTerms([FromQuery]string accessible, string quadrant, string size, string groundCover)
+        {
+
+            var searchVM = new SearchCreateVM ();
+            //searchVM.AgeRange = ageRange;
+            searchVM.GroundCover = groundCover;
+            if (accessible.Contains("true"))
+            {
+                searchVM.Accessible = true;
+            }
+            searchVM.Quadrant = quadrant;
+            searchVM.Size = size;
+
+
+            var results = await _playgroundService.GetBySearchTerms(searchVM);
+            return Ok(results);
+        }
+
+        //[BindProperties]
+        //public class SearchCreate
+        //{
+        //    public string AgeRange { get; set; }
+        //    //public bool Accessible { get; set; }
+        //    public string Quadrant { get; set; }
+        //    public string Size { get; set; }
+        //    //public string GroundCover { get; set; }
+
+        //}
     }
 }

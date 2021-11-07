@@ -18,8 +18,8 @@ namespace PlaygroundFinder.Models.ViewModels.Playground
             //ongitude 
             Accessible = src.Accessible;
             Quadrant = src.Quadrant;
-            AgeRanges = src.AgeRanges;
-            GroundCovers = src.GroundCovers;
+            AgeRanges = src.PlaygroundAgeRanges;
+            GroundCovers = src.PlaygroundGroundCovers;
             Size = src.Size;
 
         }

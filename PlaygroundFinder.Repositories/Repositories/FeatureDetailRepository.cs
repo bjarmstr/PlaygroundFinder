@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PlaygroundFinder.Models.Entities;
 using PlaygroundFinder.Repositories.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -17,11 +18,18 @@ namespace PlaygroundFinder.Repositories.Repositories
             _context = context;
         }
 
-        public async Task<List<string>>GetAll(string feature)
+        public async Task<List<GroundCover>>GetAllGroundCover()
         {
-            //var results = await _context.PlaygroundGroundCovers
-            //    .ToListAsync();
-            List<string> results = new() { "DummyData", "RepoNotBuilt", "same answer for all feature requests", feature };
+            var results = await _context.GroundCovers
+                .ToListAsync();
+            return results;
+        }
+
+
+        public async Task<List<AgeRange>> GetAllAgeRange()
+        {
+            var results = await _context.AgeRanges
+               .ToListAsync();
             return results;
         }
 

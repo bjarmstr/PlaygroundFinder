@@ -17,8 +17,10 @@ namespace PlaygroundFinder.Models.ViewModels.FeatureDetail
 
         public FeatureDetailVM(GroundCover src)
         {
+            
             Id = src.Id;
             Type= src.Material;
+
         }
 
         public FeatureDetailVM(AgeRange src)

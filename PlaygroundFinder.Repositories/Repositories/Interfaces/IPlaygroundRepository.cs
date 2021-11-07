@@ -1,4 +1,5 @@
 ﻿using PlaygroundFinder.Models.Entities;
+using PlaygroundFinder.Models.ViewModels.Search;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,6 @@ namespace PlaygroundFinder.Repositories.Repositories.Interfaces
     {
         Task<Playground> Create(Playground src);
         Task<Playground> Get(Guid id);
+        Task<List<Playground>> GetBySearchTerms(SearchCreateVM searchTerms);
     }
 }

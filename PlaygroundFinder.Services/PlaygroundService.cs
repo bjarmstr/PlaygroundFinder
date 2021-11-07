@@ -1,5 +1,6 @@
 ﻿using PlaygroundFinder.Models.Entities;
 using PlaygroundFinder.Models.ViewModels.Playground;
+using PlaygroundFinder.Models.ViewModels.Search;
 using PlaygroundFinder.Repositories.Repositories.Interfaces;
 using PlaygroundFinder.Services.Interfaces;
 using System;
@@ -42,5 +43,14 @@ namespace PlaygroundFinder.Services
             var model = new PlaygroundVM(result);
             return model;
         }
+
+        public async Task<List<PlaygroundVM>> GetBySearchTerms(SearchCreateVM searchTerms)
+        {
+            var results = await _playgroundRepository.GetBySearchTerms(searchTerms);
+            var models = results.Select(i => new PlaygroundVM(i)).ToList();
+            return models;
+        }
+
+
     }
 }

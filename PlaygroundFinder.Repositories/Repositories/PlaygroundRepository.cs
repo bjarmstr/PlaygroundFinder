@@ -42,19 +42,53 @@ namespace PlaygroundFinder.Repositories.Repositories
 
         public async Task<List<Playground>> GetBySearchTerms(SearchCreateVM searchTerms)
         {
-            var results = await _context.Playgrounds
-                .Where(playground =>
-                    playground.Quadrant == searchTerms.Quadrant &&
-                   playground.Size == searchTerms.Size &&
-                   playground.PlaygroundGroundCovers.Any(gc => gc.GroundCover.Material == searchTerms.GroundCover)
-                   )
-                .Include(e => e.PlaygroundAgeRanges).ThenInclude(e =>e.AgeRange)
-                .Include(playground => playground.PlaygroundGroundCovers).ThenInclude(e =>e.GroundCover)
-                .ToListAsync();
+            var query =  _context.Playgrounds.AsQueryable();
+            if (!string.IsNullOrEmpty( searchTerms.Quadrant))
+              {
+                query = query.Where(playground => playground.Quadrant == searchTerms.Quadrant);
+               }
+            if (!string.IsNullOrEmpty(searchTerms.Size))
+            {
+                query = query.Where(playground => playground.Size == searchTerms.Size);
+            }
+            if (!string.IsNullOrEmpty(searchTerms.GroundCover))
+            {
+                query = query.Where(playground => playground.PlaygroundGroundCovers.Any(gc => gc.GroundCover.Material == searchTerms.GroundCover));
+            }
+            if (!string.IsNullOrEmpty(searchTerms.AgeRange))
+            {
+                query = query.Where(playground => playground.PlaygroundAgeRanges.Any(ag => ag.AgeRange.Type == searchTerms.AgeRange));
+            }
+            if (searchTerms.Accessible.HasValue)
+            {
+                query = query.Where(playground => playground.Accessible == searchTerms.Accessible);
+            }
+
+
+                //query = query.Where(playground =>
+                //       playground.Quadrant == searchTerms.Quadrant &&
+                //      playground.Size == searchTerms.Size && 
+                //      playground.PlaygroundGroundCovers.Any(gc => gc.GroundCover.Material == searchTerms.GroundCover)
+                //      )
+                query = query.Include(e => e.PlaygroundAgeRanges).ThenInclude(e => e.AgeRange);
+
+            query = query.Include(playground => playground.PlaygroundGroundCovers).ThenInclude(e => e.GroundCover);
+            
+            var results = await query.ToListAsync();
+
+
             return results;
 
-
-
+            //            var results = context.Members;
+            //            if (vm.Active.HasValue)
+            //            {
+            //                results = results.Where(x => x.Active == vm.Active.Value);
+            //            }
+            //            if (!string.IsNullOrEmpty vm.FirstName))
+            //{
+            //                results = results.Where(x => x.FirstName == vm.FirstName);
+            //            }
+            //            return results.ToList();
 
         }
 

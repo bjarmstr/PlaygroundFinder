@@ -1,5 +1,6 @@
 ﻿using NetTopologySuite.Geometries;
 using PlaygroundFinder.Models.Entities;
+using PlaygroundFinder.Models.ViewModels.FeatureDetail;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,9 @@ namespace PlaygroundFinder.Models.ViewModels.Playground
             //ongitude 
             Accessible = src.Accessible;
             Quadrant = src.Quadrant;
-            AgeRanges = src.PlaygroundAgeRanges;
+            //AgeRanges = src.PlaygroundAgeRanges.Select(id => new AgeRangeVM { Id = id.AgeRange.Id, Type = id.AgeRange.Type }).ToList();
+            AgeRangeIds = src.PlaygroundAgeRanges.Select(e => e.AgeRange.Id);
+
             GroundCovers = src.PlaygroundGroundCovers;
             Size = src.Size;
 
@@ -36,8 +39,8 @@ namespace PlaygroundFinder.Models.ViewModels.Playground
 
         public string Quadrant { get; set; }
 
-        public ICollection<PlaygroundAgeRange> AgeRanges { get; set; }
-
+        public ICollection<AgeRangeVM> AgeRange{ get; set; }
+        public IEnumerable<int> AgeRangeIds { get; set; }
 
         public ICollection<PlaygroundGroundCover> GroundCovers { get; set; }
 

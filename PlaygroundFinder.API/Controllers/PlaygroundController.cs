@@ -66,15 +66,7 @@ namespace PlaygroundFinder.API.Controllers
             return Ok(results);
         }
 
-        //[BindProperties]
-        //public class SearchCreate
-        //{
-        //    public string AgeRange { get; set; }
-        //    //public bool Accessible { get; set; }
-        //    public string Quadrant { get; set; }
-        //    public string Size { get; set; }
-        //    //public string GroundCover { get; set; }
-
-        //}
+        //[BindProperties] could refactor the long list of variables out of the function call, also might be able to use a bool instead of just strings
+  
     }
 }

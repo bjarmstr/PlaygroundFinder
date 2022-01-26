@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31613.86
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaygroundFinder.API", "PlaygroundFinder.API\PlaygroundFinder.API.csproj", "{61113E7C-6297-4A21-BD7C-4033E7D3FAF9}"
 EndProject
@@ -11,7 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaygroundFinder.Repositori
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaygroundFinder.Models", "PlaygroundFinder.Models\PlaygroundFinder.Models.csproj", "{0631B4C3-DF43-4689-B42A-1EA3B88D656B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaygroundFinder.Services", "PlaygroundFinder.Services\PlaygroundFinder.Services.csproj", "{0B16CBF6-EC1D-4E50-911C-0498B0A4B9D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaygroundFinder.Services", "PlaygroundFinder.Services\PlaygroundFinder.Services.csproj", "{0B16CBF6-EC1D-4E50-911C-0498B0A4B9D7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5E4D90A6-F09D-4D47-8D7F-27130524ED39}"
+	ProjectSection(SolutionItems) = preProject
+		buildspec.yml = buildspec.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

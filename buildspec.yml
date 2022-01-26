@@ -9,7 +9,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...          
-      - docker build -t pf:api -f ./Dockerfile .
+      - docker build -t pf:api -f ./PlaygroundFinder.API/Dockerfile .
       - docker tag pf:api $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/pf:api      
   post_build:
     commands:

@@ -9,13 +9,13 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...          
-      - docker build -t pf:api -f ./PlaygroundFinder.API/Dockerfile .
-      - docker tag pf:api $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/pf:api      
+      - docker build -t playground_finder:api -f ./PlaygroundFinder.API/Dockerfile .
+      - docker tag playground_finder:api $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/playground_finder:api      
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/pf:api
+      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/playground_finder:api
       - cp Dockerrun.aws.json ../Dockerrun.aws.json
 
 artifacts:

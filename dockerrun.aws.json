@@ -1,7 +1,7 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image": {
-    "Name": "625915104196.dkr.ecr.ca-central-1.amazonaws.com/pf:api",
+    "Name": "625915104196.dkr.ecr.ca-central-1.amazonaws.com/playground_finder:api",
     "Update": "true"
   },
   "Ports": [

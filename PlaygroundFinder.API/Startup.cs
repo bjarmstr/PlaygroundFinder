@@ -53,7 +53,7 @@ namespace PlaygroundFinder.API
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "MKTFY API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Playground Finder API", Version = "v1" });
                 var apiPath = Path.Combine(System.AppContext.BaseDirectory, "PlaygroundFinder.Api.xml");
                 var modelsPath = Path.Combine(System.AppContext.BaseDirectory, "PlaygroundFinder.Models.xml");
                 c.IncludeXmlComments(apiPath);

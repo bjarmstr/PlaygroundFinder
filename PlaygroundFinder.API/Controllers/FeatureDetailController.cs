@@ -8,7 +8,10 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace PlaygroundFinder.API.Controllers
-{
+{   
+    /// <summary>
+    /// Details of valid options in a Playground Feature
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class FeatureDetailController : ControllerBase

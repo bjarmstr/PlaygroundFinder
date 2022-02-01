@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace PlaygroundFinder.API
@@ -54,10 +55,11 @@ namespace PlaygroundFinder.API
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Playground Finder API", Version = "v1" });
-                var apiPath = Path.Combine(System.AppContext.BaseDirectory, "PlaygroundFinder.Api.xml");
-                var modelsPath = Path.Combine(System.AppContext.BaseDirectory, "PlaygroundFinder.Models.xml");
+                var apiPath = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                //var apiPath = Path.Combine(System.AppContext.BaseDirectory, "PlaygroundFinder.Api.xml");
+                //var modelsPath = Path.Combine(System.AppContext.BaseDirectory, "PlaygroundFinder.Models.xml");
                 c.IncludeXmlComments(apiPath);
-                c.IncludeXmlComments(modelsPath);
+                //c.IncludeXmlComments(modelsPath);
                 //c.AddSecurityDefinition("bearer", new OpenApiSecurityScheme
                 //{
                 //    Type = SecuritySchemeType.Http,
@@ -65,7 +67,7 @@ namespace PlaygroundFinder.API
                 //    In = ParameterLocation.Header,
                 //    Scheme = "bearer"
                 //});
-               // c.OperationFilter<AuthHeaderOperationFilter>();
+                // c.OperationFilter<AuthHeaderOperationFilter>();
             });
 
         }

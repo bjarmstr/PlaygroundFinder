@@ -20,7 +20,7 @@ namespace PlaygroundFinder.Models.ViewModels.Playground
             Accessible = src.Accessible;
             Quadrant = src.Quadrant;
             AgeRange = src.PlaygroundAgeRanges.Select(e =>new AgeRangeVM { Id = e.AgeRange.Id, Type = e.AgeRange.Type } ).ToList();
-           // GroundCovers = src.PlaygroundGroundCovers.Select(e => new FeatureDetailVM { Id = e.GroundCover.Id, Type = e.GroundCover.Material }).ToList(); ;
+            GroundCovers = src.PlaygroundGroundCovers.Select(e => new FeatureDetailVM { Id = e.GroundCover.Id, Type = e.GroundCover.Material }).ToList(); ;
             Size = src.Size;
 
         }
@@ -39,7 +39,7 @@ namespace PlaygroundFinder.Models.ViewModels.Playground
 
         public ICollection<AgeRangeVM> AgeRange{ get; set; }
 
-        //public ICollection<PlaygroundGroundCover> GroundCovers { get; set; }
+        public ICollection<FeatureDetailVM> GroundCovers { get; set; }
 
         public string Size { get; set; }
     }

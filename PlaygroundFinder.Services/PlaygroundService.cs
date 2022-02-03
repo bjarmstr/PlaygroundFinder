@@ -28,6 +28,7 @@ namespace PlaygroundFinder.Services
 
                 // Have the repository create the new listing
                 var result = await _playgroundRepository.Create(newEntity);
+               //Get the Feature Details type (not just the id)
                var resultIncludesFeatures = await _playgroundRepository.Get(result.Id);
 
                 // Create the PlaygroundVM we want to return to the client

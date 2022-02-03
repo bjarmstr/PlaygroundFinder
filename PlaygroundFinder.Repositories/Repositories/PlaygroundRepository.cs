@@ -35,6 +35,7 @@ namespace PlaygroundFinder.Repositories.Repositories
         {
                 var result = await _context.Playgrounds
                 .Include(e => e.PlaygroundAgeRanges).ThenInclude(e => e.AgeRange)
+                .Include(e => e.PlaygroundGroundCovers).ThenInclude(e => e.GroundCover)
                 .FirstOrDefaultAsync(i => i.Id == id);
 
             if (result == null) throw new Exception("The requested playground could not be found");

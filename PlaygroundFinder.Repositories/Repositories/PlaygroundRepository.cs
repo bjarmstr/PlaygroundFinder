@@ -34,6 +34,7 @@ namespace PlaygroundFinder.Repositories.Repositories
         public async Task<Playground>Get(Guid id)
         {
                 var result = await _context.Playgrounds
+                .Include(e => e.PlaygroundAgeRanges).ThenInclude(e => e.AgeRange)
                 .FirstOrDefaultAsync(i => i.Id == id);
 
             if (result == null) throw new Exception("The requested playground could not be found");

@@ -23,10 +23,12 @@ namespace PlaygroundFinder.Models.Entities
            // GeoLocation = src.GeoLocation;
             Accessible = src.Accessible;
             Quadrant = src.Quadrant;
-            PlaygroundAgeRanges = src.AgeRanges;
-            PlaygroundGroundCovers = src.GroundCovers;
+            PlaygroundAgeRanges = src.AgeRangeIds.Select(id => new PlaygroundAgeRange { AgeRangeId = id }).ToList(); ;
+            PlaygroundGroundCovers = src.GroundCoverIds.Select(id => new PlaygroundGroundCover { GroundCoverId = id }).ToList(); ; ;
             Size = src.Size;
             GeoLocation = new Point(src.Longitude, src.Latitude);
+           // ListingUploads = src.UploadIds.Select(id => new ListingUpload { UploadId = id }).ToList();
+
 
         }
 

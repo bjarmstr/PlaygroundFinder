@@ -22,7 +22,7 @@ services:
   playground.db:
     restart: on-failure
     image: "postgis/postgis:13-3.1-alpine"
-    container_name: "mktfy.db"
+    container_name: "playgroundfinder.db"
     environment:
       - POSTGRES_USER=pfuser
       - POSTGRES_DB=pfdb
